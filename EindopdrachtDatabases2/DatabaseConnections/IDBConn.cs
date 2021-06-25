@@ -9,9 +9,13 @@ namespace EindopdrachtDatabases2.DatabaseConnections
     interface IDBConn
     {
         void Connect();
+        
         void Insert(int amount);
         void Select(int amount);
         void Update(int amount);
         void Delete(int amount);
+
+        string GetName();
+        bool IsConnected();
     }
 }

@@ -1451,20 +1451,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
+    "C:\\Users\\Kariem\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\xampp\\htdocs\\Github\\Databases2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
+      "projectUniqueName": "C:\\Users\\Kariem\\OneDrive\\Documenten\\GitHub\\Databases2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
       "projectName": "EindopdrachtDatabases2",
-      "projectPath": "C:\\xampp\\htdocs\\Github\\Databases2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
-      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "C:\\xampp\\htdocs\\Github\\Databases2\\EindopdrachtDatabases2\\obj\\",
+      "projectPath": "C:\\Users\\Kariem\\OneDrive\\Documenten\\GitHub\\Databases2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
+      "packagesPath": "C:\\Users\\Kariem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kariem\\OneDrive\\Documenten\\GitHub\\Databases2\\EindopdrachtDatabases2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Kariem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1521,7 +1526,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

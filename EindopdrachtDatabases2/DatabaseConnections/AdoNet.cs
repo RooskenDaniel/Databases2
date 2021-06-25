@@ -29,30 +29,33 @@ namespace EindopdrachtDatabases2.DatabaseConnections
 
         public void Insert(int amount)
         {
-            for (int i = 1; i <= amount; i++)
+            for (int index = 1; index <= amount; index++)
             {
-                this.RunQueryNonresult("INSERT INTO Series (Title, Description, IsFilm, AgeRestriction) VALUES ('Lorem Ipsum', 'Lorem Ipsum Doner Kebab', 1, 12);" +
-                    "INSERT INTO Genre (GenreName) VALUES ('Creepy Movie :s');" +
-                    $"INSERT INTO Series_Genre(SeriesId, GenreId) VALUES({i}, {i});");
+                this.RunQueryNonresult("INSERT INTO Aflevering (lengte) VALUES (27);" +
+                    "INSERT INTO Genre (genre) VALUES ('Thriller');" +
+                    $"INSERT INTO Aflevering_Genre(afleveringID, genreId) VALUES({index}, {index});");
             }
         }
 
         public void Delete(int amount)
         {
-            this.RunQueryNonresult($"DELETE FROM Series_Genre WHERE SeriesId BETWEEN 1 AND {amount}");
-            this.RunQueryNonresult($"DELETE FROM Series WHERE Id BETWEEN 1 AND {amount}");
-            this.RunQueryNonresult($"DELETE FROM Genre WHERE Id BETWEEN 1 AND {amount}");
-            this.RunQueryNonresult($"DBCC CHECKIDENT(Series,RESEED,0); DBCC CHECKIDENT(Genre,RESEED,0);");
+            this.RunQueryNonresult($"DELETE FROM Aflevering_Genre WHERE afleveringID BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DELETE FROM Aflevering WHERE ID BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DELETE FROM Genre WHERE ID BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DBCC CHECKIDENT(Aflevering,RESEED,0); DBCC CHECKIDENT(Genre,RESEED,0);");
         }
 
         public void Select(int amount)
         {
-            this.RunQueryNonresult($"SELECT TOP({amount}) * FROM Series_Genre");
+            this.RunQueryNonresult($"SELECT TOP({amount}) * FROM Aflevering_Genre");
         }
 
         public void Update(int amount)
         {
-            this.RunQueryNonresult($"UPDATE Series SET Title = 'Lorem Ipsum Kebab'");
+            for (int index = 1; index <= amount; index++)
+            {
+                this.RunQueryNonresult($"UPDATE Aflevering SET lengte = 24 WHERE ID = {index}");
+            }
         }
 
         public string GetName() => $"ADO.NET (SQL Server)";
