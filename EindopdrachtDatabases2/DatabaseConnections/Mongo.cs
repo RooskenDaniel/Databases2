@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EindopdrachtDatabases2.DatabaseConnections
 {
-    class EntityFrameworkDB
+    class Mongo
     {
     }
 }
