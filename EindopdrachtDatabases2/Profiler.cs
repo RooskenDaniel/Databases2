@@ -43,6 +43,8 @@ namespace EindopdrachtDatabases2
 
             //int[] amounts = new int[4] { 10, 100, 1000, 10000 };
             int[] amounts = new int[1] { 1 };
+            //we grab every static method in the class MethodsForProfiler
+            //IsPublic would return other methods that are not needed
             var methods = typeof(MethodsForProfiler).GetMethods().Where(x => x.IsStatic);
 
             foreach (int amount in amounts)
