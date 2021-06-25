@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace EindopdrachtDatabases2.DatabaseConnections.DatabaseEntities
 {
-    class MongoAlevering_Genre
+    class Aflevering
     {
         public int ID { get; set; }
-        public int afleveringID { get; set; }
-        public int genreID { get; set; }
+        public int lengte { get; set; }
     }
 }
