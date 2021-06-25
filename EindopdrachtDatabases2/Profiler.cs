@@ -36,7 +36,10 @@ namespace EindopdrachtDatabases2
             //Execute.AddDatabaseToList(mongoConn);
             //Execute.AddDatabaseToList(efConn);
 
-            Console.WriteLine("Databases has been succesfully registered!");
+            Console.WriteLine("Databases has been succesfully registered!\nPress any key to start the profiling process");
+            Console.ReadKey();
+
+            Console.WriteLine("Starting the profiling process...");
 
             //int[] amounts = new int[4] { 10, 100, 1000, 10000 };
             int[] amounts = new int[1] { 1 };
