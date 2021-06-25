@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EindopdrachtDatabases2.DatabaseConnections.DatabaseEntities
 {
-    class MongoGenre
+    class Genre
     {
         public int ID { get; set; }
         public string genre { get; set; }
