@@ -15,9 +15,8 @@ namespace EindopdrachtDatabases2.DatabaseConnections.Entityframework
         [Required]
         public int ID { get; set; }
 
-
+        [Column("kwaliteit")]
+        [Required]
+        public char kwaliteit { get; set; }
     }
-    [Column("kwaliteit")]
-    [Required]
-    public char kwaliteit { get; set; }
 }
