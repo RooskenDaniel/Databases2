@@ -16,7 +16,8 @@ namespace EindopdrachtDatabases2
     {
         static void Main(string[] args)
         {
-            
+            Profiler profiler = new Profiler();
+            profiler.StartProfiling();
         }
     }
 }

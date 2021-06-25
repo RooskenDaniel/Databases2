@@ -16,6 +16,6 @@ namespace EindopdrachtDatabases2.DatabaseConnections.Entityframework
 
         [Column("genre")]
         [Required]
-        public char genre { get; set; }
+        public string genre { get; set; }
 }
 }

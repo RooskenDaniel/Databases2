@@ -17,8 +17,8 @@ namespace EindopdrachtDatabases2
         public Profiler()
         {
             //adoConn = new AdoNet();
-            mongoConn = new Mongo();
-            //efConn = new EntityFramework();
+            //mongoConn = new Mongo();
+            efConn = new EntityFramework();
             Execute = new Execute();
         }
 
@@ -27,24 +27,25 @@ namespace EindopdrachtDatabases2
             Console.WriteLine("Let's start profiling some databases on their speed with CRUD-operations!\nAttempting to connect to all databases...");
 
             //adoConn.Connect();
-            mongoConn.Connect();
-            //efConn.Connect();
+            //mongoConn.Connect();
+            efConn.Connect();
 
             Console.WriteLine("Connected to all databases!\nAttempting to register all databases...");
 
             //Execute.AddDatabaseToList(adoConn);
-            Execute.AddDatabaseToList(mongoConn);
-            //Execute.AddDatabaseToList(efConn);
+            //Execute.AddDatabaseToList(mongoConn);
+            Execute.AddDatabaseToList(efConn);
 
             Console.WriteLine("Databases has been succesfully registered!\nPress any key to start the profiling process");
             Console.ReadKey();
 
             Console.WriteLine("Starting the profiling process...");
 
-            //int[] amounts = new int[4] { 10, 100, 1000, 10000 };
-            int[] amounts = new int[1] { 1 };
+            int[] amounts = new int[4] { 10, 100, 1000, 10000 };
+            //int[] amounts = new int[1] { 1 };
+
             //we grab every static method in the class MethodsForProfiler
-            //IsPublic would return other methods that are not needed
+            //IsPublic would return extra methods that are not needed
             var methods = typeof(MethodsForProfiler).GetMethods().Where(x => x.IsStatic);
 
             foreach (int amount in amounts)
