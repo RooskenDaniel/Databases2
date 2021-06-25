@@ -227,3 +227,6 @@ C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin
 C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\Kariem\OneDrive\Documenten\GitHub\Databases2\EindopdrachtDatabases2\bin\Debug\net5.0\System.CodeDom.dll

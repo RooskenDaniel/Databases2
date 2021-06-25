@@ -24,6 +24,9 @@ namespace EindopdrachtDatabases2.DatabaseConnections
 
         public void Insert(int amount)
         {
+            //This method works for 1 row of data
+            //More rows are not possible, because it does not recognise connection.Afleveringen.Take(amount)
+
             var Afleveringen = new List<Aflevering>();
             var Genres = new List<Genre>();
             var Aflevering_Genres = new List<Aflevering_Genre>();
