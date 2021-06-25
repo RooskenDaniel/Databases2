@@ -10,8 +10,7 @@ namespace EindopdrachtDatabases2
     {
         static void Main(string[] args)
         {
-            AdoNet adoNet = new AdoNet();
-            adoNet.Connect();
+            
         }
     }
 }

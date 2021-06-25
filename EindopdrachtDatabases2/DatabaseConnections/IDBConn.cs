@@ -9,9 +9,9 @@ namespace EindopdrachtDatabases2.DatabaseConnections
     interface IDBConn
     {
         void Connect();
-        void Insert(int amount);
-        void Select(int amount);
-        void Update(int amount);
-        void Delete(int amount);
+        void Insert(int[] amountArray);
+        void Select(int[] amountArray);
+        void Update(int[] amountArray);
+        void Delete(int[] amountArray);
     }
 }

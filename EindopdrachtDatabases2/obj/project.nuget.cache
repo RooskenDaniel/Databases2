@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YVitg4kcdYLnzHIJjJo2pSL7OH8MuwWR1/e05IJefDuYJM8Oo0QXl1qcSCUOljV586m2QsHQWT6gJ9I9LfCeqg==",
+  "dgSpecHash": "7nlVzGbA2ZNP+2W2NfHBAXrFOirSQgzG8bpCxA5nu9rE2r1zRhLquGwGNJkIT6/XBtJnfWgQ0xzF5hLxvXwI4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kariem\\OneDrive\\Documenten\\GitHub\\db2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
+  "projectFilePath": "C:\\Users\\Kariem\\OneDrive\\Documenten\\GitHub\\Databases2\\EindopdrachtDatabases2\\EindopdrachtDatabases2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kariem\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\Kariem\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
