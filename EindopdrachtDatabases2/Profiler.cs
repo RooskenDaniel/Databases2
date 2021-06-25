@@ -16,9 +16,9 @@ namespace EindopdrachtDatabases2
 
         public Profiler()
         {
-            //adoConn = new AdoNet();
-            //mongoConn = new Mongo();
-            efConn = new EntityFramework();
+            adoConn = new AdoNet();
+            mongoConn = new Mongo();
+            //efConn = new EntityFramework();
             Execute = new Execute();
         }
 
@@ -26,15 +26,15 @@ namespace EindopdrachtDatabases2
         {
             Console.WriteLine("Let's start profiling some databases on their speed with CRUD-operations!\nAttempting to connect to all databases...");
 
-            //adoConn.Connect();
-            //mongoConn.Connect();
-            efConn.Connect();
+            adoConn.Connect();
+            mongoConn.Connect();
+            //efConn.Connect();
 
             Console.WriteLine("Connected to all databases!\nAttempting to register all databases...");
 
-            //Execute.AddDatabaseToList(adoConn);
-            //Execute.AddDatabaseToList(mongoConn);
-            Execute.AddDatabaseToList(efConn);
+            Execute.AddDatabaseToList(adoConn);
+            Execute.AddDatabaseToList(mongoConn);
+            //Execute.AddDatabaseToList(efConn);
 
             Console.WriteLine("Databases has been succesfully registered!\nPress any key to start the profiling process");
             Console.ReadKey();
