@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace EindopdrachtDatabases2.DatabaseConnections
 {
-    class AdoNetDB : IDBConn
+    class AdoNet : IDBConn
     {
         private bool connected = false;
         private SqlConnection connection;
         private string connString;
 
-        public AdoNetDB()
+        public AdoNet()
         {
             connString = ConfigurationManager.ConnectionStrings["AdoConn"].ConnectionString;
             connection = new SqlConnection(connString);
@@ -27,40 +27,32 @@ namespace EindopdrachtDatabases2.DatabaseConnections
             Console.WriteLine($"Connected to an ADO.NET SQL Server\n  - SQL Server version: {connection.ServerVersion}.", true);
         }
 
-        public void Insert(int[] amountArray)
+        public void Insert(int amount)
         {
-            foreach (int amount in amountArray)
+            for (int i = 1; i <= amount; i++)
             {
-                for (int i = 1; i <= amount; i++)
-                {
-                    this.RunQueryNonresult("INSERT INTO Series (Title, Description, IsFilm, AgeRestriction) VALUES ('Lorem Ipsum', 'Lorem Ipsum Doner Kebab', 1, 12);" +
-                        "INSERT INTO Genre (GenreName) VALUES ('Creepy Movie :s');" +
-                        $"INSERT INTO Series_Genre(SeriesId, GenreId) VALUES({i}, {i});");
-                }
+                this.RunQueryNonresult("INSERT INTO Series (Title, Description, IsFilm, AgeRestriction) VALUES ('Lorem Ipsum', 'Lorem Ipsum Doner Kebab', 1, 12);" +
+                    "INSERT INTO Genre (GenreName) VALUES ('Creepy Movie :s');" +
+                    $"INSERT INTO Series_Genre(SeriesId, GenreId) VALUES({i}, {i});");
             }
         }
 
-        public void Delete(int[] amountArray)
+        public void Delete(int amount)
         {
-            foreach (int amount in amountArray)
-            {
-                this.RunQueryNonresult($"DELETE FROM Series_Genre WHERE SeriesId BETWEEN 1 AND {amount}");
-                this.RunQueryNonresult($"DELETE FROM Series WHERE Id BETWEEN 1 AND {amount}");
-                this.RunQueryNonresult($"DELETE FROM Genre WHERE Id BETWEEN 1 AND {amount}");
-                this.RunQueryNonresult($"DBCC CHECKIDENT(Series,RESEED,0); DBCC CHECKIDENT(Genre,RESEED,0);");
-            }
+            this.RunQueryNonresult($"DELETE FROM Series_Genre WHERE SeriesId BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DELETE FROM Series WHERE Id BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DELETE FROM Genre WHERE Id BETWEEN 1 AND {amount}");
+            this.RunQueryNonresult($"DBCC CHECKIDENT(Series,RESEED,0); DBCC CHECKIDENT(Genre,RESEED,0);");
         }
 
-        public void Select(int[] amountArray)
+        public void Select(int amount)
         {
-            foreach (int amount in amountArray)
-                this.RunQueryNonresult($"SELECT TOP({amount}) * FROM Series_Genre");
+            this.RunQueryNonresult($"SELECT TOP({amount}) * FROM Series_Genre");
         }
 
-        public void Update(int[] amountArray)
+        public void Update(int amount)
         {
-            foreach (int amount in amountArray)
-                this.RunQueryNonresult($"UPDATE Series SET Title = 'Lorem Ipsum Kebab'");
+            this.RunQueryNonresult($"UPDATE Series SET Title = 'Lorem Ipsum Kebab'");
         }
 
         public string GetName() => $"ADO.NET (SQL Server)";
