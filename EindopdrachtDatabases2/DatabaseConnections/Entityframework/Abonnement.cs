@@ -15,10 +15,10 @@ namespace EindopdrachtDatabases2.DatabaseConnections.Entityframework
         [Required]
         public int ID { get; set; }
 
-        [ForeignKey("kwaliteit")]
-        [Column("KwaliteitID")]
+        [ForeignKey("Kwaliteit")]
+        [Column("kwaliteitID")]
         [Required]
-        public int KwaliteitID { get; set; }
+        public int kwaliteitID { get; set; }
         public Kwaliteit Kwaliteit { get; set; }
 
         [Column("prijs")]
