@@ -1,33 +1,65 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using System.Configuration;
 
 namespace EindopdrachtDatabases2.DatabaseConnections
 {
-    public class Blog
+    public class EntityFramework : IDBConn
     {
-        public int BlogId { get; set; }
-        public string Name { get; set; }
+        private bool connected = false;
+        private NetflixContext connection;
 
-        public virtual List<Post> Posts { get; set; }
+        public void Connect()
+        {
+            connection = new NetflixContext();
+            connection.Database.EnsureCreated();
+            connected = true;
+            Console.WriteLine($"Connected to an Entity Framework Core database.\n - EF Provider: {connection.Database.ProviderName.Split('.').Last()}");
+        }
+
+        public void Delete(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public void Insert(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsConnected()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Select(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(int amount)
+        {
+            throw new NotImplementedException();
+        }
     }
 
-    public class Post
-    {
-        public int PostId { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
-
-        public int BlogId { get; set; }
-        public virtual Blog Blog { get; set; }
-    }
-
-    public class BloggingContext : DbContext
-    {
-        public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Post> Posts { get; set; }
+    class NetflixContext : DbContext
+    { 
+        private string connectionString { get; set; }
+        public NetflixContext()
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["EFConn"].ConnectionString;
+        }
     }
 }
